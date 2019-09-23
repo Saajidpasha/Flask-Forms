@@ -1,0 +1,38 @@
+
+<html>
+<body>
+<h2 style = "text-align : center;">Contact Form</h2>
+{% for msg in form.name.errors %}
+<div>{{msg}}</div>
+{% endfor %}
+{% for msg in form.email.errors%}
+<div>{{msg}}</div>
+{% endfor %}
+<form action = "http://localhost:5000/contact" method=post>
+<fieldset>
+<legend>Contact Form</legend>
+{{form.hidden_tag()}}
+<div style = font-size:20px;font-weight:bold;margin-left:150px;>
+{{form.name.label}}<br>
+{{form.name}}
+<br>
+<br>
+{{form.gender.label}} {{form.gender}}
+{{form.age.label}}<br>
+{{form.age}}
+<br>
+{{form.email.label}}<br>
+{{form.email}}
+<br>
+{{form.message.label}}<br>
+{{form.message}}
+<br>
+{{form.language.label}}<br>
+{{form.language}}
+<br>
+{{form.submit}}
+</div>
+</fieldset>
+</form>
+</body>
+</html>
